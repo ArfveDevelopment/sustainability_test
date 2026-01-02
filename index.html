@@ -17,27 +17,140 @@
             background: #ffffff;
             color: #2c2c2c;
             line-height: 1.6;
+            width: 100%;
+            min-width: 100vw;
+            height: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
         }
 
-        /* Header */
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+        
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
+
+        /* Header - Identical to Next.js version */
         header {
-            padding: 2rem 0;
-            border-bottom: 1px solid #e0e0e0;
+            width: 100%;
+            height: 80px;
+            background: black;
             position: sticky;
             top: 0;
-            background: white;
-            z-index: 10;
+            z-index: 50;
         }
 
-        h1 {
-            font-size: 1.5rem;
-            color: #6b9e7f;
+        .header-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        @media (min-width: 640px) {
+            .header-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .header-container {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header-container {
+                padding-left: 8rem;
+                padding-right: 8rem;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .header-container {
+                padding-left: 8rem;
+                padding-right: 8rem;
+            }
+        }
+
+        .header-left, .header-right {
+            width: 33.333%;
+        }
+
+        .header-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 33.333%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .logo-link {
+            pointer-events: auto;
+            display: inline-block;
+        }
+
+        .logo {
+            width: 112px;
+            height: 40px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: black;
+            text-decoration: none;
         }
 
         /* Hero */
@@ -48,30 +161,26 @@
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
             margin-bottom: 1rem;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
             color: #555;
             margin-bottom: 2rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 1.8rem;
-            }
+            line-height: 1.6;
         }
 
         /* Button */
         .btn {
             display: inline-block;
-            padding: 0.9rem 2rem;
+            padding: clamp(0.75rem, 0.8rem + 0.375vw, 0.875rem) clamp(1.5rem, 1.3rem + 1vw, 2rem);
             background: #6b9e7f;
             color: white;
             text-decoration: none;
@@ -80,7 +189,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
             margin: 0.5rem;
         }
 
@@ -99,14 +208,15 @@
 
         /* Sections */
         section {
-            padding: 3.5rem 1.5rem;
+            padding: clamp(2rem, 1.5rem + 2vw, 3.5rem) 1.5rem;
         }
 
         section h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
             margin-bottom: 2rem;
             text-align: center;
             font-weight: 700;
+            line-height: 1.4;
         }
 
         .section-alt {
@@ -117,7 +227,7 @@
         .grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
             margin-bottom: 2rem;
         }
 
@@ -133,8 +243,8 @@
 
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
+            padding: clamp(1.5rem, 2vw, 2rem);
+            border-radius: clamp(0.5rem, 1vw, 0.75rem);
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
@@ -149,35 +259,38 @@
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: clamp(1.125rem, 1rem + 0.625vw, 1.3rem);
             margin-bottom: 1rem;
             color: #2c2c2c;
+            line-height: 1.6;
         }
 
         .card p {
             color: #555;
-            font-size: 0.95rem;
+            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 0.95rem);
+            line-height: 1.6;
         }
 
         /* Image Placeholder */
         .img-placeholder {
             width: 100%;
-            height: 250px;
+            height: clamp(200px, 40vw, 250px);
             background: linear-gradient(135deg, #e8e8e8, #d8d8d8);
-            border-radius: 8px;
+            border-radius: clamp(0.5rem, 1vw, 0.75rem);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #999;
             font-weight: 500;
             margin-bottom: 1.5rem;
+            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
         }
 
         /* Stats */
         .stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: clamp(1rem, 2vw, 2rem);
             margin-top: 2rem;
         }
 
@@ -192,22 +305,24 @@
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
             font-weight: 700;
             color: #6b9e7f;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
         .stat-label {
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
             color: #666;
             font-weight: 500;
+            line-height: 1.5;
         }
 
         /* CTA Section */
         .cta {
             background: #f8f8f8;
-            padding: 4rem 1.5rem;
+            padding: clamp(3rem, 4vw, 4rem) 1.5rem;
             text-align: center;
         }
 
@@ -219,24 +334,57 @@
             max-width: 600px;
             margin: 0 auto 2rem;
             color: #555;
-            font-size: 1rem;
+            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+            line-height: 1.6;
         }
 
         /* Footer */
         footer {
             background: #3a3a3a;
             color: #ddd;
-            padding: 2rem 1.5rem;
+            padding: clamp(1.5rem, 2vw, 2rem) 1.5rem;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.9rem);
+            line-height: 1.5;
+        }
+
+        /* Fluid spacing utilities */
+        .space-fluid {
+            gap: clamp(1rem, 2vw, 2rem);
+        }
+        
+        .space-fluid-sm {
+            gap: clamp(0.5rem, 1vw, 1rem);
+        }
+        
+        .space-fluid-lg {
+            gap: clamp(1.5rem, 3vw, 3rem);
+        }
+
+        /* Smooth transitions for responsive elements */
+        *,
+        *::before,
+        *::after {
+            transition: font-size 0.3s ease, padding 0.3s ease, margin 0.3s ease;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - Identical to Next.js version -->
     <header>
-        <div class="container">
-            <h1>Eco Harmony</h1>
+        <div class="header-container">
+            <!-- Left: Empty for symmetry -->
+            <div class="header-left"></div>
+            
+            <!-- Center: Logo -->
+            <div class="header-center">
+                <a href="/" class="logo-link">
+                    <div class="logo">ECO HARMONY</div>
+                </a>
+            </div>
+            
+            <!-- Right: Empty for symmetry -->
+            <div class="header-right"></div>
         </div>
     </header>
 
