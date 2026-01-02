@@ -3,475 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Harmony</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Sustainability</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: #ffffff;
-            color: #2c2c2c;
-            line-height: 1.6;
-            width: 100%;
-            min-width: 100vw;
-            height: 100%;
-            min-height: 100vh;
-            overflow-x: hidden;
+            background-color: white;
+            font-family: 'Montserrat', sans-serif;
+            padding: 60px 20px;
         }
-
+        
         .container {
-            max-width: 1440px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .container {
-                max-width: 640px;
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
         }
         
-        @media (min-width: 768px) {
-            .container {
-                max-width: 768px;
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1024px;
-                padding-left: 3rem;
-                padding-right: 3rem;
-            }
-        }
-        
-        @media (min-width: 1280px) {
-            .container {
-                max-width: 1280px;
-                padding-left: 4rem;
-                padding-right: 4rem;
-            }
-        }
-        
-        @media (min-width: 1536px) {
-            .container {
-                max-width: 1536px;
-                padding-left: 5rem;
-                padding-right: 5rem;
-            }
-        }
-
-        /* Header - Identical to Next.js version */
-        header {
-            width: 100%;
-            height: 80px;
-            background: black;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-
-        .header-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        @media (min-width: 640px) {
-            .header-container {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .header-container {
-                padding-left: 4rem;
-                padding-right: 4rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .header-container {
-                padding-left: 8rem;
-                padding-right: 8rem;
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .header-container {
-                padding-left: 8rem;
-                padding-right: 8rem;
-            }
-        }
-
-        .header-left, .header-right {
-            width: 33.333%;
-        }
-
-        .header-center {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 33.333%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            pointer-events: none;
-        }
-
-        .logo-link {
-            pointer-events: auto;
-            display: inline-block;
-        }
-
-        .logo {
-            width: 112px;
-            height: 40px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: black;
-            text-decoration: none;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 4rem 1.5rem;
+        h1 {
             text-align: center;
-            background: #f8f8f8;
+            margin-bottom: 60px;
+            font-size: 2.5em;
+            color: #2d5016;
         }
-
-        .hero h2 {
-            font-size: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-            line-height: 1.2;
+        
+        .paragraphs-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
-
-        .hero p {
-            font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-            color: #555;
-            margin-bottom: 2rem;
-            max-width: 600px;
+        
+        .paragraph {
+            width: 65%;
+            line-height: 1.8;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .paragraph:nth-child(1) {
+            margin-left: 0;
+        }
+        
+        .paragraph:nth-child(2) {
             margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        /* Button */
-        .btn {
-            display: inline-block;
-            padding: clamp(0.75rem, 0.8rem + 0.375vw, 0.875rem) clamp(1.5rem, 1.3rem + 1vw, 2rem);
-            background: #6b9e7f;
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-            margin: 0.5rem;
-        }
-
-        .btn:hover {
-            background: #5a8b6f;
-            transform: translateY(-2px);
-        }
-
-        .btn-blue {
-            background: #5b8fa3;
-        }
-
-        .btn-blue:hover {
-            background: #4a7a92;
-        }
-
-        /* Sections */
-        section {
-            padding: clamp(2rem, 1.5rem + 2vw, 3.5rem) 1.5rem;
-        }
-
-        section h2 {
-            font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-
-        .section-alt {
-            background: #f5f5f5;
-        }
-
-        /* Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(1.5rem, 3vw, 2.5rem);
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .card {
-            background: white;
-            padding: clamp(1.5rem, 2vw, 2rem);
-            border-radius: clamp(0.5rem, 1vw, 0.75rem);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .section-alt .card {
-            background: white;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .card h3 {
-            font-size: clamp(1.125rem, 1rem + 0.625vw, 1.3rem);
-            margin-bottom: 1rem;
-            color: #2c2c2c;
-            line-height: 1.6;
-        }
-
-        .card p {
-            color: #555;
-            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 0.95rem);
-            line-height: 1.6;
-        }
-
-        /* Image Placeholder */
-        .img-placeholder {
-            width: 100%;
-            height: clamp(200px, 40vw, 250px);
-            background: linear-gradient(135deg, #e8e8e8, #d8d8d8);
-            border-radius: clamp(0.5rem, 1vw, 0.75rem);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-        }
-
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(1rem, 2vw, 2rem);
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .stats {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-            font-weight: 700;
-            color: #6b9e7f;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-
-        .stat-label {
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
-            color: #666;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: #f8f8f8;
-            padding: clamp(3rem, 4vw, 4rem) 1.5rem;
-            text-align: center;
-        }
-
-        .cta h2 {
-            margin-bottom: 1rem;
-        }
-
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            color: #555;
-            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: #3a3a3a;
-            color: #ddd;
-            padding: clamp(1.5rem, 2vw, 2rem) 1.5rem;
-            text-align: center;
-            font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.9rem);
-            line-height: 1.5;
-        }
-
-        /* Fluid spacing utilities */
-        .space-fluid {
-            gap: clamp(1rem, 2vw, 2rem);
+            margin-right: 0;
         }
         
-        .space-fluid-sm {
-            gap: clamp(0.5rem, 1vw, 1rem);
+        .paragraph:nth-child(3) {
+            margin-left: 0;
         }
         
-        .space-fluid-lg {
-            gap: clamp(1.5rem, 3vw, 3rem);
-        }
-
-        /* Smooth transitions for responsive elements */
-        *,
-        *::before,
-        *::after {
-            transition: font-size 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+        .paragraph:nth-child(4) {
+            margin-left: auto;
+            margin-right: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header - Identical to Next.js version -->
-    <header>
-        <div class="header-container">
-            <!-- Left: Empty for symmetry -->
-            <div class="header-left"></div>
+    <div class="container">
+        <h1>Sustainability</h1>
+        
+        <div class="paragraphs-wrapper">
+            <p class="paragraph">
+                Our commitment to sustainability drives every decision we make. From sourcing materials responsibly to minimizing our carbon footprint, we believe that businesses have a crucial role to play in protecting our planet. We invest in renewable energy solutions and work with partners who share our environmental values, ensuring that our operations reflect our dedication to a healthier future for generations to come.
+            </p>
             
-            <!-- Center: Logo -->
-            <div class="header-center">
-                <a href="/" class="logo-link">
-                    <div class="logo">ECO HARMONY</div>
-                </a>
-            </div>
+            <p class="paragraph">
+                Climate change presents one of the greatest challenges of our time, and we're determined to be part of the solution. Through innovative practices and continuous improvement, we've reduced our emissions by over 40% in the past five years. Our goal is to achieve net-zero carbon emissions by 2030, and we're actively implementing strategies across our supply chain to make this vision a reality.
+            </p>
             
-            <!-- Right: Empty for symmetry -->
-            <div class="header-right"></div>
+            <p class="paragraph">
+                Water conservation is another pillar of our sustainability strategy. We've implemented advanced technologies to recycle and reuse water throughout our facilities, reducing consumption by nearly 50%. Additionally, we support global water access initiatives and work to protect freshwater ecosystems in communities where we operate, recognizing that clean water is essential for both people and nature.
+            </p>
+            
+            <p class="paragraph">
+                Community engagement and social responsibility go hand-in-hand with our environmental efforts. We partner with local organizations, support education programs focused on sustainability, and empower our employees to volunteer their time and expertise. By fostering a culture of environmental stewardship, we create lasting positive impact and inspire others to join us in building a more sustainable world.
+            </p>
         </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h2>Sustainable Living Starts Here</h2>
-            <p>Join us in creating a cleaner, greener future through mindful choices.</p>
-            <button class="btn">Learn More</button>
-        </div>
-    </section>
-
-    <!-- Our Mission -->
-    <section>
-        <div class="container">
-            <h2>Our Mission</h2>
-            <div class="grid">
-                <div class="img-placeholder">Nature imagery</div>
-                <div class="card">
-                    <h3>Building a Sustainable Future</h3>
-                    <p>We're committed to creating positive environmental impact. Through innovation and community collaboration, we're working toward a cleaner planet for future generations.</p>
-                    <button class="btn">Join Us</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Practices -->
-    <section class="section-alt">
-        <div class="container">
-            <h2>Sustainable Practices</h2>
-            <div class="grid grid-3">
-                <div class="card">
-                    <h3>Renewable Energy</h3>
-                    <p>Harnessing wind and solar power to create a clean energy future.</p>
-                </div>
-                <div class="card">
-                    <h3>Eco-Conscious Design</h3>
-                    <p>Every product is designed with the environment in mind, minimizing waste.</p>
-                </div>
-                <div class="card">
-                    <h3>Community Impact</h3>
-                    <p>Empowering communities through education and sustainable collaboration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact -->
-    <section>
-        <div class="container">
-            <h2>Our Impact</h2>
-            <div class="img-placeholder">Impact visualization</div>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">2.5M</div>
-                    <div class="stat-label">Tons CO₂ Reduced</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">50K</div>
-                    <div class="stat-label">Active Members</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Satisfaction</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">145</div>
-                    <div class="stat-label">Projects Done</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Make a Difference?</h2>
-            <p>Join thousands of people committed to a sustainable future.</p>
-            <button class="btn">Get Started</button>
-            <button class="btn btn-blue">Learn More</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Eco Harmony. Committed to sustainable living.</p>
-    </footer>
+    </div>
 </body>
 </html>
