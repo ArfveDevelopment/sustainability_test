@@ -1,11 +1,16 @@
 // app/sustainability/page.tsx
+'use client'; // Add this at the top
+
 import Footer from '@/components/Footer';
 
 export default function SustainabilityPage() {
   return (
     <div>
-      {/* Inline styles only - no Tailwind */}
-      <style jsx global>{`
+      {/* Regular style tag instead of styled-jsx */}
+      <style>
+        {`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+        
         * {
           margin: 0;
           padding: 0;
@@ -19,12 +24,12 @@ export default function SustainabilityPage() {
           color: #1a1a18;
         }
         
-        .container {
+        .sustainability-container {
           max-width: 900px;
           margin: 0 auto;
         }
         
-        h1 {
+        .sustainability-h1 {
           text-align: center;
           margin-bottom: 60px;
           font-size: 2.5em;
@@ -38,7 +43,7 @@ export default function SustainabilityPage() {
           gap: 60px;
         }
         
-        .paragraph {
+        .sustainability-paragraph {
           width: 100%;
           line-height: 1.8;
           color: #333330;
@@ -154,25 +159,23 @@ export default function SustainabilityPage() {
           display: block;
           margin-bottom: 8px;
         }
-        
-        /* Font import */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
-      `}</style>
+        `}
+      </style>
 
-      <div className="container">
-        <h1>Sustainability</h1>
+      <div className="sustainability-container">
+        <h1 className="sustainability-h1">Sustainability</h1>
         
         <div className="paragraphs-wrapper">
-          <div className="paragraph">
+          <div className="sustainability-paragraph">
             <p>Arfve exists to bring together a community of people who value excellence, longevity, and purpose. Our mission is to end tech overconsumption by creating products with a transparent supply chain, designed for longevity. 
 A triple side longevity: physical, emotional, and functional. 
-In a world where more than 50 electronic devices often lie unused in every household and islands of e-waste pollute our oceans, we believe the solution isn't a dream.</p>
-            <span className="bold-phrase">It's a decision. Yours.</span>
+In a world where more than 50 electronic devices often lie unused in every household and islands of e-waste pollute our oceans, we believe the solution isn&apos;t a dream.</p>
+            <span className="bold-phrase">It&apos;s a decision. Yours.</span>
           </div>
           
-          <div className="paragraph">
+          <div className="sustainability-paragraph">
             <p>Sustainability at Arfve is a core value. 
-Arfve products are the world's first three pieces modular sound products. Battery, chipset, and dynamic driver are completely replaceable. This modular architecture is centered around user's satisfaction.</p>
+Arfve products are the world&apos;s first three pieces modular sound products. Battery, chipset, and dynamic driver are completely replaceable. This modular architecture is centered around user&apos;s satisfaction.</p>
             
             <div className="modules-container">
               <div className="module-box">
@@ -190,11 +193,11 @@ Arfve products are the world's first three pieces modular sound products. Batter
             </div>
           </div>
           
-          <div className="paragraph">
+          <div className="sustainability-paragraph">
             <p>Every component is designed to be separated, repaired, and recycled, supported by an end-of-life strategy focused on recovery rather than disposal. </p>
           </div>
           
-          <div className="paragraph">
+          <div className="sustainability-paragraph">
             <p>Even our material choices reflect the same vision. Built for disassembly rather than glued shut, Arfve technology puts control back where it belongs: with the user. 
 Our products are made with up to 85% recycled materials, a carefully balanced composition that preserves structural integrity, performance, and premium quality without compromise.
 Soy-based vegetable inks are integrated directly into components and markings, reducing dependence on petroleum-based chemicals while enhancing material safety, durability, and recyclability.
@@ -202,11 +205,11 @@ Arfve products will be heavily compounded by metal alloys which offer exceptiona
 </p>
           </div>
           
-          <div className="paragraph">
-            <p>Change starts with everyday choices. At Arfve, we design technology that adapts, endures, and respects your values. Our three-piece modular earbuds challenge planned obsolescence by design. You decide when it's time to move on and not a sealed battery or a failed component. Replace only what you need, when you need it. This is modularity with purpose: a circular lifecycle where performance, responsibility, and transparency exist in harmony.</p>
+          <div className="sustainability-paragraph">
+            <p>Change starts with everyday choices. At Arfve, we design technology that adapts, endures, and respects your values. Our three-piece modular earbuds challenge planned obsolescence by design. You decide when it&apos;s time to move on and not a sealed battery or a failed component. Replace only what you need, when you need it. This is modularity with purpose: a circular lifecycle where performance, responsibility, and transparency exist in harmony.</p>
             <span className="bold-phrase">Embrace now this future where design, sound quality, and sustainability thrive. Together. </span>
             
-            <div className="paragraph">
+            <div className="sustainability-paragraph">
               <p>Register and be part of the change.</p>
               <div className="cta-container">
                 <a href="#" className="cta-button">
