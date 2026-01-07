@@ -1,6 +1,9 @@
 // app/sustainability-new/page.tsx
 'use client';
 
+import SustainabilitySocialCarousel from '@/components/sustainability/SustainabilitySocialCarousel';
+import NewHeroSection from '@/components/sections/NewHeroSection';
+import LegacyInfoSection from '@/components/sections/LegacyInfoSection';
 import { useState } from 'react';
 
 export default function SustainabilityPage() {
