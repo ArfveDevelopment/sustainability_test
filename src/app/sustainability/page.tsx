@@ -14,7 +14,7 @@ export default function SustainabilityPage() {
   };
 
   return (
-    <div className="dark">
+    <div className="dark font-montserrat">
       {/* Head section for fonts and styles */}
       <head>
         <link
@@ -24,7 +24,7 @@ export default function SustainabilityPage() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
         <style>
@@ -46,7 +46,7 @@ export default function SustainabilityPage() {
         </style>
       </head>
 
-      <body className="bg-gray-50 dark:bg-[#112116] text-gray-900 dark:text-white font-sans overflow-x-hidden">
+      <body className="bg-gray-50 dark:bg-[#112116] text-gray-900 dark:text-white overflow-x-hidden">
         {/* Top Navigation */}
         <header className="fixed top-0 w-full z-50 bg-[#112217]/80 backdrop-blur-md border-b border-[#244730]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -202,7 +202,7 @@ export default function SustainabilityPage() {
                   
                   <div className="absolute bottom-8 left-8 right-8 z-20">
                     <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl">
-                      <p className="text-white font-serif italic text-xl">
+                      <p className="text-white italic text-xl">
                         &quot;The greatest threat to our planet is the belief that someone else will save it.&quot;
                       </p>
                       <p className="text-[#19e65e] mt-4 text-sm font-bold uppercase tracking-wider">
