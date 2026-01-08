@@ -16,44 +16,44 @@ export default function SustainabilityPage() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-    console.warn('Video failed to load:', e.currentTarget.src);
-  };
+  // const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+  //   console.warn('Video failed to load:', e.currentTarget.src);
+  // };
 
-  // Determine video source based on screen size
-  useEffect(() => {
-    const updateVideoSrc = () => {
-      if (typeof window === 'undefined') return;
+  // // Determine video source based on screen size
+  // useEffect(() => {
+  //   const updateVideoSrc = () => {
+  //     if (typeof window === 'undefined') return;
 
-      const width = window.innerWidth;
-      let src = '';
+  //     const width = window.innerWidth;
+  //     let src = '';
 
-      if (width < 768) {
-        src = '/v6/hero/HeroBothVersionsLoopVertical.webm';
-      } else if (width < 1024) {
-        src = '/v6/hero/HeroBothVersionsLoopSquare.webm';
-      } else {
-        src = '/v6/hero/HeroBothVersionsLoopHorizontal.webm';
-      }
+  //     if (width < 768) {
+  //       src = '/v6/hero/HeroBothVersionsLoopVertical.webm';
+  //     } else if (width < 1024) {
+  //       src = '/v6/hero/HeroBothVersionsLoopSquare.webm';
+  //     } else {
+  //       src = '/v6/hero/HeroBothVersionsLoopHorizontal.webm';
+  //     }
 
-      setCurrentVideoSrc(src);
-    };
+  //     setCurrentVideoSrc(src);
+  //   };
 
-    updateVideoSrc();
-    window.addEventListener('resize', updateVideoSrc);
+  //   updateVideoSrc();
+  //   window.addEventListener('resize', updateVideoSrc);
 
-    return () => window.removeEventListener('resize', updateVideoSrc);
-  }, []);
+  //   return () => window.removeEventListener('resize', updateVideoSrc);
+  // }, []);
 
-  // Cleanup video on unmount
-  useEffect(() => {
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.src = '';
-      }
-    };
-  }, []);
+  // // Cleanup video on unmount
+  // useEffect(() => {
+  //   return () => {
+  //     if (videoRef.current) {
+  //       videoRef.current.pause();
+  //       videoRef.current.src = '';
+  //     }
+  //   };
+  // }, []);
 
   return (
     <>
