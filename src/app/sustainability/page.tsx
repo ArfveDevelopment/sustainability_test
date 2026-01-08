@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
+import SignupCTASection from '@/components/sections/SignupCTASection';
 
 export default function SustainabilityPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,8 +76,8 @@ export default function SustainabilityPage() {
         )}
       </div>
 
-      {/* Plain Hero Section for Sustainability Page */}
-      <div className="relative w-full h-screen bg-[#fafaf8]">
+      {/* Plain Hero Section for Sustainability Page - Reduced height */}
+      <div className="relative w-full h-[75vh] bg-[#fafaf8]">
         {/* Centered content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="text-center px-4">
@@ -107,7 +108,6 @@ export default function SustainabilityPage() {
           body {
             background-color: #fafaf8;
             font-family: 'Montserrat', sans-serif;
-            padding: 60px 20px;
             color: #1a1a18;
           }
           
@@ -168,6 +168,7 @@ export default function SustainabilityPage() {
             background-color: #fafaf8;
             text-align: center;
             transition: all 0.3s ease;
+            border-radius: 16px; /* More rounded corners */
           }
           
           .module-box:hover {
@@ -186,9 +187,10 @@ export default function SustainabilityPage() {
           .module-title {
             font-size: 1.2em;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px; /* Reduced spacing */
             color: #1a1a18;
             transition: color 0.3s ease;
+            line-height: 1.2; /* Reduced line height */
           }
           
           .module-description {
@@ -198,54 +200,7 @@ export default function SustainabilityPage() {
             transition: color 0.3s ease;
           }
           
-          .cta-container {
-            text-align: center;
-            margin-top: 40px;
-          }
-          
-          .cta-button {
-            position: relative;
-            display: inline-block;
-            padding: 18px 50px;
-            background-color: #1a1a18;
-            color: #fafaf8;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1em;
-            border: none;
-            cursor: pointer;
-            overflow: hidden;
-            letter-spacing: 0.5px;
-            transition: all 0.4s ease;
-          }
-          
-          .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: #fafaf8;
-            transition: left 0.4s ease;
-            z-index: -1;
-          }
-          
-          .cta-button:hover {
-            color: #1a1a18;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(26, 26, 24, 0.2);
-          }
-          
-          .cta-button:hover::before {
-            left: 0;
-          }
-          
-          .cta-text {
-            display: block;
-            margin-bottom: 8px;
-          }
+          /* Removed the CTA button styles */
           `}
         </style>
 
@@ -296,17 +251,15 @@ export default function SustainabilityPage() {
               
               <div className="sustainability-paragraph">
                 <p>Register and be part of the change.</p>
-                <div className="cta-container">
-                  <a href="#" className="cta-button">
-                    <span className="cta-text">Join Arfve</span>
-                    <span style={{fontSize: '0.9em'}}>→</span>
-                  </a>
-                </div>
+                {/* CTA button removed - replaced by SignupCTASection below */}
               </div>
             </div>
           </div>
         </div>
-        
+
+        {/* Add the SignupCTASection component here */}
+        <SignupCTASection />
+
         <Footer />
       </div>
     </>
