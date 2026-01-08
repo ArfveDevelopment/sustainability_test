@@ -76,8 +76,13 @@ export default function SustainabilityPage() {
         )}
       </div>
 
-      {/* Plain Hero Section for Sustainability Page - Reduced height */}
-      <div className="relative w-full h-[75vh] bg-[#fafaf8]">
+      {/* Plain Hero Section for Sustainability Page - Further reduced height with radial gradient */}
+      <div 
+        className="relative w-full h-[60vh] bg-[#fafaf8]"
+        style={{
+          background: 'radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(228, 228, 228, 0) 100%)'
+        }}
+      >
         {/* Centered content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="text-center px-4">
