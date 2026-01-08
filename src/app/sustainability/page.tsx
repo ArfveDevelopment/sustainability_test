@@ -76,13 +76,8 @@ export default function SustainabilityPage() {
         )}
       </div>
 
-      {/* Plain Hero Section for Sustainability Page - Further reduced height with radial gradient */}
-      <div 
-        className="relative w-full h-[60vh] bg-[#fafaf8]"
-        style={{
-          background: 'radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(228, 228, 228, 0) 100%)'
-        }}
-      >
+      {/* Plain Hero Section for Sustainability Page - Reduced height with plain white background */}
+      <div className="relative w-full h-[60vh] bg-white">
         {/* Centered content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <div className="text-center px-4">
@@ -98,8 +93,8 @@ export default function SustainabilityPage() {
         </div>
       </div>
 
-      {/* Sustainability content section */}
-      <div className="relative z-10 bg-[#fafaf8]">
+      {/* Sustainability content section with white background */}
+      <div className="relative z-10 bg-white">
         <style>
           {`
           @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
@@ -111,7 +106,7 @@ export default function SustainabilityPage() {
           }
           
           body {
-            background-color: #fafaf8;
+            background-color: white;
             font-family: 'Montserrat', sans-serif;
             color: #1a1a18;
           }
@@ -170,7 +165,7 @@ export default function SustainabilityPage() {
             max-width: 250px;
             padding: 30px;
             border: 2px solid #1a1a18;
-            background-color: #fafaf8;
+            background-color: white;
             text-align: center;
             transition: all 0.3s ease;
             border-radius: 16px; /* More rounded corners */
@@ -178,11 +173,11 @@ export default function SustainabilityPage() {
           
           .module-box:hover {
             background-color: #1a1a18;
-            color: #fafaf8;
+            color: white;
           }
           
           .module-box:hover .module-title {
-            color: #fafaf8;
+            color: white;
           }
           
           .module-box:hover .module-description {
