@@ -93,7 +93,7 @@ export default function SustainabilityPage() {
         </div>
       </div>
 
-      {/* Sustainability content section with white background */}
+      {/* Sustainability content section with white background - Reduced top padding */}
       <div className="relative z-10 bg-white">
         <style>
           {`
@@ -127,7 +127,7 @@ export default function SustainabilityPage() {
           .paragraphs-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 40px; /* Reduced from 60px */
           }
           
           .sustainability-paragraph {
@@ -144,7 +144,7 @@ export default function SustainabilityPage() {
             display: block;
             font-size: 2em;
             font-weight: 900;
-            margin-top: 25px;
+            margin-top: 20px; /* Reduced from 25px */
             letter-spacing: -1px;
             line-height: 1.2;
             color: #1a1a18;
@@ -153,7 +153,7 @@ export default function SustainabilityPage() {
           .modules-container {
             display: flex;
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 30px; /* Reduced from 40px */
             margin-bottom: 20px;
             justify-content: center;
             flex-wrap: wrap;
@@ -163,12 +163,12 @@ export default function SustainabilityPage() {
             flex: 1;
             min-width: 200px;
             max-width: 250px;
-            padding: 30px;
+            padding: 25px; /* Reduced from 30px */
             border: 2px solid #1a1a18;
             background-color: white;
             text-align: center;
             transition: all 0.3s ease;
-            border-radius: 16px; /* More rounded corners */
+            border-radius: 16px;
           }
           
           .module-box:hover {
@@ -187,15 +187,15 @@ export default function SustainabilityPage() {
           .module-title {
             font-size: 1.2em;
             font-weight: 700;
-            margin-bottom: 10px; /* Reduced spacing */
+            margin-bottom: 8px; /* Reduced from 10px */
             color: #1a1a18;
             transition: color 0.3s ease;
-            line-height: 1.2; /* Reduced line height */
+            line-height: 1.2;
           }
           
           .module-description {
             font-size: 0.95em;
-            line-height: 1.6;
+            line-height: 1.5; /* Reduced from 1.6 */
             color: #666660;
             transition: color 0.3s ease;
           }
@@ -204,7 +204,7 @@ export default function SustainabilityPage() {
           `}
         </style>
 
-        <div className="sustainability-container px-4 md:px-6 py-16 md:py-24">
+        <div className="sustainability-container px-4 md:px-6 py-12 md:py-16"> {/* Reduced padding */}
           <div className="paragraphs-wrapper">
             <div className="sustainability-paragraph">
               <p>Arfve exists to bring together a community of people who value excellence, longevity, and purpose. Our mission is to end tech overconsumption by creating products with a transparent supply chain, designed for longevity. 
