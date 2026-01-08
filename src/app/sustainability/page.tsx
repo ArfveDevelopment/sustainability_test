@@ -1,59 +1,17 @@
 // app/sustainability/page.tsx
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import RevealSection from '@/components/ui/RevealSection';
 import Footer from '@/components/Footer';
 
 export default function SustainabilityPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [currentVideoSrc, setCurrentVideoSrc] = useState<string>('');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  // const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-  //   console.warn('Video failed to load:', e.currentTarget.src);
-  // };
-
-  // // Determine video source based on screen size
-  // useEffect(() => {
-  //   const updateVideoSrc = () => {
-  //     if (typeof window === 'undefined') return;
-
-  //     const width = window.innerWidth;
-  //     let src = '';
-
-  //     if (width < 768) {
-  //       src = '/v6/hero/HeroBothVersionsLoopVertical.webm';
-  //     } else if (width < 1024) {
-  //       src = '/v6/hero/HeroBothVersionsLoopSquare.webm';
-  //     } else {
-  //       src = '/v6/hero/HeroBothVersionsLoopHorizontal.webm';
-  //     }
-
-  //     setCurrentVideoSrc(src);
-  //   };
-
-  //   updateVideoSrc();
-  //   window.addEventListener('resize', updateVideoSrc);
-
-  //   return () => window.removeEventListener('resize', updateVideoSrc);
-  // }, []);
-
-  // // Cleanup video on unmount
-  // useEffect(() => {
-  //   return () => {
-  //     if (videoRef.current) {
-  //       videoRef.current.pause();
-  //       videoRef.current.src = '';
-  //     }
-  //   };
-  // }, []);
 
   return (
     <>
@@ -117,47 +75,25 @@ export default function SustainabilityPage() {
         )}
       </div>
 
-      {/* Hero section for the sustainability page */}
-      <RevealSection className="relative w-full overflow-hidden">
-        {/* Hero container - Full viewport height for immersive video experience */}
-        <div className="relative w-full h-screen">
-          {/* Single responsive video element */}
-          {currentVideoSrc && (
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover"
-              src={currentVideoSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              aria-label="Hero background video"
-              onError={handleVideoError}
-            />
-          )}
-
-          {/* Overlay container for bottom info text */}
-          <div className="absolute inset-0">
-            {/* Bottom info text - 50px from bottom of frame, aligned with container left margin */}
-            <div className="absolute left-[50px] 3xl:left-[80px] 4xl:left-[120px] bottom-[50px]">
-              <div className="flex flex-col items-start gap-[7px]">
-                {/* Mobile: 28px, Tablet: 32px, Desktop: 36px, 3XL: 42px, 4XL: 48px */}
-                <div className="font-montserrat font-semibold text-[28px] leading-[34px] md:text-[32px] md:leading-[40px] lg:text-[36px] lg:leading-[44px] 3xl:text-[42px] 3xl:leading-[50px] 4xl:text-[48px] 4xl:leading-[56px] text-white mix-blend-difference whitespace-nowrap">
-                  Sustainability
-                </div>
-                {/* Mobile: 14px, Tablet: 16px, Desktop: 18px, 3XL: 22px, 4XL: 24px */}
-                <div className="font-montserrat font-semibold text-[14px] leading-[18px] md:text-[16px] md:leading-[20px] lg:text-[18px] lg:leading-[24px] 3xl:text-[22px] 3xl:leading-[28px] 4xl:text-[24px] 4xl:leading-[30px] text-white mix-blend-difference">
-                  Redefining technology for a circular future
-                </div>
-              </div>
-            </div>
+      {/* Plain Hero Section for Sustainability Page */}
+      <div className="relative w-full h-screen bg-[#fafaf8]">
+        {/* Centered content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="text-center px-4">
+            {/* Title */}
+            <h1 className="font-montserrat font-semibold text-[28px] leading-[34px] md:text-[42px] md:leading-[48px] lg:text-[56px] lg:leading-[62px] 3xl:text-[64px] 3xl:leading-[70px] 4xl:text-[72px] 4xl:leading-[78px] text-[#1A1A1A] mb-4 md:mb-6">
+              Sustainability
+            </h1>
+            {/* Subtitle */}
+            <p className="font-montserrat font-semibold text-[14px] leading-[18px] md:text-[18px] md:leading-[24px] lg:text-[22px] lg:leading-[28px] 3xl:text-[24px] 3xl:leading-[30px] 4xl:text-[26px] 4xl:leading-[32px] text-[#333330] max-w-2xl mx-auto">
+              Redefining technology for a circular future
+            </p>
           </div>
         </div>
-      </RevealSection>
+      </div>
 
       {/* Sustainability content section */}
-      <div className="relative z-10 bg-[#fafaf8] pt-[82px]">
+      <div className="relative z-10 bg-[#fafaf8]">
         <style>
           {`
           @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
@@ -313,7 +249,7 @@ export default function SustainabilityPage() {
           `}
         </style>
 
-        <div className="sustainability-container">
+        <div className="sustainability-container px-4 md:px-6 py-16 md:py-24">
           <div className="paragraphs-wrapper">
             <div className="sustainability-paragraph">
               <p>Arfve exists to bring together a community of people who value excellence, longevity, and purpose. Our mission is to end tech overconsumption by creating products with a transparent supply chain, designed for longevity. 
